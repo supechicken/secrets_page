@@ -3,7 +3,7 @@ require 'open3'
 
 def input_tap(x, y)
   system "adb -s localhost:5555 shell input swipe #{x} #{y} #{x} #{y} 100"
-  sleep 0.5
+  sleep 2
 end
 
 Dir.chdir '/home/supechicken/secrets_page' do
