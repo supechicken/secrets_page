@@ -1,7 +1,7 @@
 require 'json'
 
 def input_tap(x, y)
-  system "adb -s localhost:5555 shell input tap #{x} #{y}"
+  system "adb -s localhost:5555 shell input swipe #{x} #{y} #{x} #{y} 150"
   sleep 0.5
 end
 
@@ -18,7 +18,7 @@ Dir.chdir '/home/supechicken/secrets_page' do
     response = JSON.load_file(last_changed_file, symbolize_names: true)
 
     # have update
-    input_tap 161, 312
+    input_tap 150, 312
     input_tap 343, 573
     input_tap 255, 90
 
