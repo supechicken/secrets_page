@@ -1,5 +1,5 @@
 def input_tap(x, y)
-  system "adb -s localhost:5555 shell input_tap #{x} #{y}"
+  system "adb -s localhost:5555 shell input tap #{x} #{y}"
   sleep 0.5
 end
 
