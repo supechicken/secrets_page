@@ -14,7 +14,7 @@ Dir.chdir '/home/supechicken/secrets_page' do
   updated_head      = `git rev-parse --short HEAD`
   last_changed_file = `git diff --name-status HEAD~ HEAD | grep '^A'`.chomp.split("\t", 2)[-1]
 
-  if last_changed_file && (ARGV.include?('--force') || current_head == updated_head)
+  if last_changed_file && (ARGV.include?('--force') || current_head != updated_head)
     response = JSON.load_file(last_changed_file, symbolize_names: true)
 
     # have update
@@ -22,7 +22,7 @@ Dir.chdir '/home/supechicken/secrets_page' do
     input_tap 343, 573
     input_tap 255, 90
 
-    system 'adb', 'shell', 'am', 'broadcast', '-a', 'ADB_INPUT_TEXT', '--es', 'msg', response
+    system 'adb', 'shell', 'am', 'broadcast', '-a', 'ADB_INPUT_TEXT', '--es', 'msg', response[:response]
     sleep 0.5
 
     input_tap 212, 1033
