@@ -2,7 +2,7 @@ require 'json'
 require 'open3'
 
 def input_tap(x, y)
-  system "adb -s localhost:5555 shell input swipe #{x} #{y} #{x} #{y} 150"
+  system "adb -s localhost:5555 shell input swipe #{x} #{y} #{x} #{y} 100"
   sleep 0.5
 end
 
@@ -23,7 +23,7 @@ Dir.chdir '/home/supechicken/secrets_page' do
     input_tap 343, 573
     input_tap 255, 90
 
-    Open3.capture2 "adb shell xargs -d '\0' am broadcast -a ADB_INPUT_TEXT --es msg", stdin_data: response[:response]
+    Open3.capture2 "adb shell xargs -d '\\0' am broadcast -a ADB_INPUT_TEXT --es msg", stdin_data: response[:response]
     sleep 0.5
 
     input_tap 212, 1033
