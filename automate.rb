@@ -8,6 +8,7 @@ Dir.chdir '/home/supechicken/secrets_page' do
   current_head = `git rev-parse --short HEAD`
 
   system 'git pull'
+  system 'adb connect localhost:5555'
 
   if current_head != `git rev-parse --short HEAD`
     # have update
