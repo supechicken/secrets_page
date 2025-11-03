@@ -18,11 +18,11 @@ Dir.chdir '/home/supechicken/secrets_page' do
     response = JSON.load_file(last_changed_file, symbolize_names: true)
 
     # have update
-    input_tap 153, 322
+    input_tap 161, 312
     input_tap 343, 573
     input_tap 255, 90
 
-    system 'adb', 'shell', 'am', 'broadcast', '-a', 'ADB_INPUT_TEXT', '--es', 'msg', response[:response]
+    system 'adb', 'shell', 'am', 'broadcast', '-a', 'ADB_INPUT_TEXT', '--es', 'msg', response[:response].inspect
     sleep 0.5
 
     input_tap 212, 1033
