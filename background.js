@@ -1,4 +1,4 @@
-const BACKEND_URL = 'mkpsecret-api.supechicken666.eu.org',
+const BACKEND_URL = 'https://mkpsecret-api.supechicken666.eu.org',
       UPLOAD_PATH = '/9e41f1d6-d055-47c7-b552-a5f88ed5593f/newResponse',
       HINT_TEXTS  = ['今日七樓天台好大陣大麻味，有無同學聞到？？', '今日又俾人抓頭髮，好煩！！！！！', '唧唧復唧唧，木蘭當戶織。', '請文明發言']
 
