@@ -45,7 +45,7 @@ async function submitResponse() {
     const apiResponse  = await fetch(BACKEND_URL + UPLOAD_PATH, { method: 'POST', body: JSON.stringify({ response: textbox.value }) }),
           responseJSON = isValidJSON(await apiResponse.text());
 
-    if (!responseJSON || apiResponse.status != 201) {
+    if (!responseJSON && apiResponse.status != 201) {
       showMessage(`投稿失敗 (HTTP 回報狀態碼 ${apiResponse.status})`);
       return false;
     }
@@ -54,6 +54,9 @@ async function submitResponse() {
       case 'Success':
         showMessage('投稿成功！');
         return true;
+      case 'Too many responses':
+        showMessage('師兄／師姐，一分鐘內最多只可以投五次稿，請稍後再試。');
+        return false;
       case 'API Failed':
         showMessage(`投稿失敗，以下為 GitHub REST API 返回的錯誤：\n\n${responseJSON.gh_api_response}`);
         return false;
