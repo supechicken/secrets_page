@@ -1,0 +1,97 @@
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+
+  background-color: pink;
+  background: linear-gradient(to bottom right, rgb(213, 0, 113), rgb(219, 142, 0));
+  display: flex;
+  justify-content: center;
+
+  font-family: Arial, Helvetica, "Microsoft JhengHei", sans-serif;
+}
+
+#main-container {
+  height: 100%;
+  width: 87%;
+  max-width: 7in;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#main-container > * {
+  width: 100%;
+  margin: 10px;
+  border: none;
+  border-radius: 40px;
+}
+
+#input-box {
+  height: 40%;
+  background-color: transparent;
+  overflow: hidden;
+}
+
+#input-box > * {
+  width: calc(100% - 60px);
+  margin: 0;
+  padding: 20px 30px;
+
+  font-size: 1.4rem;
+  font-weight: bolder;
+}
+
+#input-box > p {
+  background-color: white;
+  height: 30px;
+  text-align: center;
+}
+
+#input-box > textarea {
+  border: none;
+  height: calc(100% - 30px - 80px);
+  background-color: rgba(255, 255, 255, 0.22);
+}
+
+#input-box > textarea:focus {
+  outline: none;
+}
+
+#input-box > textarea::placeholder {
+  color: rgba(0, 0, 0, 0.28);
+}
+
+button {
+  padding: 20px 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  background-color: black;
+
+  animation: zoomInOut 2s ease-in-out infinite;
+  color: white;
+  cursor: pointer;
+}
+
+a {
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: bolder;
+  text-decoration: none;
+}
+
+@keyframes zoomInOut {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}

@@ -55,7 +55,7 @@ async function submitResponse() {
         showMessage('投稿成功！');
         return true;
       case 'Too many responses':
-        showMessage('師兄／師姐，一分鐘內最多只可以投五次稿，請稍後再試。');
+        showMessage('師兄／師姐：\n\n一分鐘內最多只可以投五次稿，請稍後再試！');
         return false;
       case 'API Failed':
         showMessage(`投稿失敗，以下為 GitHub REST API 返回的錯誤：\n\n${responseJSON.gh_api_response}`);
